@@ -21,7 +21,7 @@
     <link href="static/css/MintGray.css" rel="stylesheet">
 
     <!-- css for linecharts -->
-    <link rel="stylesheet" href="static/css/linecharts.css">
+    <link rel="stylesheet" href="static/css/linechart_modifying.css">
 
   </head>
 
@@ -78,32 +78,68 @@
       </div>
     </section>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="product-item-title d-flex">
-        <div class="bg-faded p-3 d-flex ml-auto rounded">
-          <h2 class="section-heading mb-0">
-            <span class="section-heading-upper">프렌차이즈 개수</span>
-          </h2>
+<!-- linechart radio button -->
+
+<section class="page-section about-heading">
+  <div class="container">
+    <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="static/img/about.jpg" alt="">
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="bg-faded rounded p-5">
+            <div id="radios">
+              <input type="radio" name="tab" value="franchise" onclick="show_franchise();" />
+                프랜차이즈 수
+              <input type="radio" name="tab" value="blog" onclick="show_blog();" />
+                블로그 포스팅 개수
+              <input type="radio" name="tab" value="floatingPop" onclick="show_floatingPop();" />
+                유동인구수
+              <input type="radio" name="tab" value="population" onclick="show_population();" />
+                주거인구수
+              <input type="radio" name="tab" value="sales" onclick="show_sale();" />
+                부동산 미분양율
+              <input type="radio" name="tab" value="search" onclick="show_search();" />
+                송도 검색량
+            </div>
+          </div>
         </div>
       </div>
-    <div class="linechart" id="franchise"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="product-item-title d-flex">
-        <div class="bg-faded p-3 d-flex ml-auto rounded">
-          <h2 class="section-heading mb-0">
-            <span class="section-heading-upper">블로그 포스팅 개수</span>
-          </h2>
+
+  <div id="line_franchise" class="hide linecharts">
+      <section class="page-section">
+        <div class="container">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-3 d-flex ml-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">프렌차이즈 개수</span>
+              </h2>
+            </div>
+          </div>
+        <div class="linechart" id="franchise"></div>
         </div>
-      </div>
-    <div class="linechart" id="blogpost"></div>
-    </div>
-  </section>
+      </section>
+  </div>
 
+  <div id="line_blog" class="hide linecharts">
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-3 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">블로그 포스팅 개수</span>
+            </h2>
+          </div>
+        </div>
+      <div class="linechart" id="blogpost"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="line_floatingPop" class="hide linecharts">
   <section class="page-section">
     <div class="container">
       <div class="product-item-title d-flex">
@@ -116,7 +152,9 @@
     <div class="linechart" id="floatingPop"></div>
     </div>
   </section>
+  </div>
 
+  <div id="line_pop" class="hide linecharts">
   <section class="page-section">
     <div class="container">
       <div class="product-item-title d-flex">
@@ -129,32 +167,37 @@
     <div class="linechart" id="population"></div>
     </div>
   </section>
+  </div>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="product-item-title d-flex">
-        <div class="bg-faded p-3 d-flex ml-auto rounded">
-          <h2 class="section-heading mb-0">
-            <span class="section-heading-upper">부동산 미분양율</span>
-          </h2>
+  <div id="line_sale" class="hide linecharts">
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-3 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">부동산 미분양율</span>
+            </h2>
+          </div>
         </div>
+      <div class="linechart" id="sales"></div>
       </div>
-    <div class="linechart" id="sales"></div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="product-item-title d-flex">
-        <div class="bg-faded p-3 d-flex ml-auto rounded">
-          <h2 class="section-heading mb-0">
-            <span class="section-heading-upper">송도 검색량</span>
-          </h2>
+  <div id="line_search" class="hide linecharts">
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-3 d-flex ml-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">송도 검색량</span>
+            </h2>
+          </div>
         </div>
+      <div class="linechart" id="search"></div>
       </div>
-    <div class="linechart" id="search"></div>
-    </div>
-  </section>
+    </section>
+  </div>
 
 
     <footer class="footer text-faded text-center py-5">
@@ -179,7 +222,8 @@
       show_sale();
       show_search();
     </script>
-    <script src="static/js/linechart.js"></script>
+    <script src="static/js/linechart_modifying.js"></script>
+
     <script src="static/js/sp_franchise.js"></script>
     <script src="static/js/sp_blog.js"></script>
     <script src="static/js/sp_floatingPop.js"></script>

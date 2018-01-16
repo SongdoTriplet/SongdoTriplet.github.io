@@ -1,3 +1,16 @@
+/*linechart radio button*/
+
+.hide {
+  display: none;
+}
+
+.linecharts li {
+  list-style-type: none;
+  display: inline;
+}
+
+
+/*linecharts*/
 
 .linechart {
   background-color: #333;
