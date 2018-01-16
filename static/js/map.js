@@ -31,7 +31,7 @@ d3.csv("static/data/mapping.csv", function(collection) {
   collection = collection.map(function(d) {
     var icon = new L.icon({
       iconUrl: categoryies[d['category']],
-      iconSize:     [20, 20],
+      iconSize:     [15, 15],
       iconAnchor:   [22, 22],
       popupAnchor:  [-5, -26]
     });
@@ -87,6 +87,7 @@ d3.csv("static/data/mapping.csv", function(collection) {
     filteredData.forEach(function(d) {
       var marker = L.marker([d.latitude, d.longitude], {icon: d.icon});
       markers.push(marker);
+      marker.setOpacity(0.7);
       marker.addTo(map).bindPopup(d['brand']);
     });
   }
