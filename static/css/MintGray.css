@@ -127,6 +127,7 @@ p {
     left: 0;
     position: absolute;
     bottom: -2rem;
+    padding: 10px;
   }
 }
 
