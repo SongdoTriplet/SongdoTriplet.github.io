@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Relationship between Songdo and Song Triplet from the return of Supermen.">
+    <meta name="author" content="TRIT">
+
+    <title>Songdo Triplet</title>
+
+    <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
+  	<link rel="stylesheet" href="static/css/map.css"/>
+  	<link rel="stylesheet" href="static/css/business-casual.min.css"/>
+  	<link rel="stylesheet" href="static/css/business-casual.css"/>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">데이터로 본 송도의 변화</span>
+      <span class="site-heading-lower">대한민국송도만세</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html">대한민국송도만세</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+          </li>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="linechart.html">Line Chart</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="map.html">Map</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="wordcloud.html">Word Cloud</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="static/img/about.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">송도를 설명하는 지도</span>
+                  <span class="section-heading-lower">지도에 관해서</span>
+                </h2>
+                <p>지도는 어쩌구저쩌구 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="bg-faded rounded p-5 container">
+
+        <div id="checkboxes">
+        	<p class="jg"> 주거 관련: <br>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="hospital"/> 병원 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="gym"/> 운동 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="edu"/> 학교 </label>
+        	</p>
+        	<p class="jg"> 핫플레이스 관련: <br>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="karaoke"> 노래방 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="movie"/> 영화관 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="bakery"/> 제과점 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="cafe"/> 카페 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="fastfood"/> 패스트푸드 </label>
+        	  <label><input type="checkbox" class="LifeCheckbox" value="conv"/> 편의점 </label>
+        	</p>
+        </div>
+
+      	<!-- 0 == before, 1 == mid, 2 == after -->
+        <input type="range" value="0" min="0" max="2" list="steplist" id="opdateFilter">
+          <datalist id="steplist">
+              <option value="0" label="전"></option>
+              <option value="1" label="중"></option>
+              <option value="2" label="후"></option>
+          </datalist>
+        </input>
+
+      	<div id="map" ></div>
+
+      </div>
+    </div>
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; 대한민국송도만세 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+
+  	<script type="text/javascript" src="static/js/map.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,150 @@
+.linechart {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.x-axis .tick {
+  stroke: white;
+  opacity: .25 !important;
+}
+
+.x-axis .tick line {
+  stroke: white;
+  opacity: 0 !important;
+}
+
+.y-axis .tick:first-child {
+  stroke: white;
+  opacity: 0 !important;
+}
+
+.x-axis path {
+  stroke-width: 2 !important;
+  /* opacity: .75; */
+}
+
+.y-axis .tick {
+  stroke: white;
+  opacity: 0.25 !important;
+}
+
+.y-axis .tick:first-child {
+  stroke: white;
+}
+
+.y-axis path {
+  stroke-width: 0;
+  opacity: 0 !important;
+}
+
+.y-axis .tick text {
+  font-size: 12px;
+}
+
+.x-axis .tick text {
+  font-size: 12px;
+}
+
+.linechart {
+  width: 708px ;
+  height: 250px ;
+  max-width: 100%;
+  max-height: 100%;
+  /*margin: 50px auto;*/
+  font-family: "Proxima Nova", sans-serif;
+  position: relative;
+}
+
+.linechart * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.linechart path {
+  stroke-width: 3;
+  fill: none;
+}
+
+.linechart path.area {
+  stroke-width: 0;
+  fill: red;
+}
+
+.linechart .point {
+  stroke-width: 2;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+}
+
+.linechart .point.end {
+  opacity: 1;
+}
+
+.linechart .bar-rect {
+  fill: transparent;
+  stroke: none;
+}
+
+.linechart .point.hover {
+  stroke-width: 7;
+  opacity: 1;
+}
+
+.linechart .point.end.hover {
+  stroke-width: 5;
+  opacity: 1;
+}
+
+.linechart .chart-container {
+  position: relative;
+}
+
+.linechart .chart-tooltip {
+  position: absolute;
+  background: white;
+  color: #999;
+  left: 0;
+  /* display: none; */
+  padding: 6px 8px 5px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  margin-left: -8px;
+  opacity: 0;
+  -webkit-transition: .25s;
+}
+
+.linechart .chart-tooltip .title {
+  z-index: 3;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.linechart .chart-tooltip.hover {
+  margin-top: -10px;
+  opacity: 1;
+}
+
+.linechart .chart-tooltip:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+.linechart .bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 13px;
+}

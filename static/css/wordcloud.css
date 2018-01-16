@@ -1,0 +1,26 @@
+/* wordclouds */
+.wordclouds {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.wordclouds @font-face{
+    font-family:'Godo'!important ;
+    font-style:normal;
+    font-weight:400;
+    src:url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'),
+       url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+    }
+
+.wordclouds text:hover {
+    stroke: black;
+    stroke-width: 1.5px;
+}
+
+#wordcloud-container {
+  width: 97%;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 10px;
+  margin: 20px auto;
+}

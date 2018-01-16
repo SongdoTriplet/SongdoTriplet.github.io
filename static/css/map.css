@@ -1,0 +1,16 @@
+#map { height: 65vh;
+    width: 100%; }
+
+body {
+  color:black;
+}
+
+label {
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+.btn .btn-secondary {
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+.jg{font-family: 'Jeju Gothic', sans-serif;}
