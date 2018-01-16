@@ -15,18 +15,12 @@ $('#search').each(function(sparklineId) {
         {'date': '2015', 'value': 1785420},
         {'date': '2016', 'value': 2391658},
         {'date': '2017', 'value': 2846752}
-
-
-
-
         ];
-  		 console.log(data);
         var parseDate = d3.time.format("%Y");
 
         data.forEach(function(d) {
             d.date = parseDate.parse(d.date);
             d.value = +d.value;
-            console.log(d.date)
         });
 
 
@@ -165,7 +159,6 @@ $('#search').each(function(sparklineId) {
       });
   	    var tooltipLeft = $tooltip.data("calcX")(data[i].date) - ($tooltip.width() / 2);
         var tooltipTop = $tooltip.data("calcY")(data[i].value) - 30;
-      console.log(tooltipLeft);
         // Position it again
         $tooltip.css({
             left: tooltipLeft + "px",
