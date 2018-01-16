@@ -27,7 +27,7 @@ map._initPathRoot();
 var svg = d3.select("#map").append("svg");
 var g = svg.append("g");
 
-d3.csv("static/data/mapping_real.csv", function(collection) {
+d3.csv("static/data/mapping.csv", function(collection) {
   collection = collection.map(function(d) {
     var icon = new L.icon({
       iconUrl: categoryies[d['category']],
