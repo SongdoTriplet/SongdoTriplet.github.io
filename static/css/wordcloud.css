@@ -1,7 +1,8 @@
 /* wordclouds */
 .wordclouds {
-  max-width: 100%;
+  max-width: 90%;
   max-height: 100%;
+  padding-top: 30px;
 }
 
 .wordclouds @font-face{
@@ -14,13 +15,9 @@
 
 .wordclouds text:hover {
     stroke: black;
-    stroke-width: 1.5px;
+    stroke-width: 1.8px;
 }
 
-#wordcloud-container {
-  width: 97%;
-  background-color: white;
-  border-radius: 10px;
-  padding-top: 10px;
-  margin: 20px auto;
+.wordcloud_collection {
+  text-align: center;
 }

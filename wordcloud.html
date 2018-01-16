@@ -68,10 +68,11 @@
                   <span class="section-heading-lower">워드클라우드</span>
                 </h2>
                 <p>워드 클라우드 설명 :3</p>
-                <div id="wordcloud-container">
-                  <div id="cloud1"></div>
-                  <div id="cloud2"></div>
-                  <div id="cloud3"></div>
+                <div class="wordcloud_collection">
+                  <div class="wordclouds" id="cloud1"></div>
+                  <h5>슈퍼맨이 돌아왔다 삼둥이 방영 전</h5>
+                  <div class="wordclouds" id="cloud3"></div>
+                  <h5>슈퍼맨이 돌아왔다 삼둥이 방영 후</h5>
                 </div>
               </div>
             </div>
@@ -121,7 +122,6 @@
     <script src="static/js/wordcloud.js"></script>
     <script>
       wordcloud('#cloud1', 'static/data/count_noun_1213.csv', 0.0090);
-      wordcloud('#cloud2', 'static/data/count_noun_1415.csv', 0.0035);
       wordcloud('#cloud3', 'static/data/count_noun_1617.csv', 0.0017);
     </script>
     <script src="static/js/BumpChart.js"></script>
