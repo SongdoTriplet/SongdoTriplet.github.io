@@ -68,6 +68,12 @@ p {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
+.intro_links {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  text-align: center;
+}
+
 #mainNav {
   background-color: #667578;
   font-family: 'Raleway';
