@@ -23,6 +23,10 @@
     <!-- css for linecharts -->
     <link rel="stylesheet" href="static/css/linecharts.css">
 
+    <!-- css for go to top button -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" href="static/css/returntotop.css">
+
   </head>
 
   <body>
@@ -66,11 +70,21 @@
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
+                  <span class="section-heading-upper">회귀 분석 기반</span>
+                  <span class="section-heading-lower">라인 차트로 보는 송도의 변화</span>
                 </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+                <p>우리는 총 3가지 종류의 데이터를 모았습니다.</p>
+                <ol>
+                  <li>오픈 데이터: 부동산 관련, 유동 인구, 지역 인허가 기관, 인구 통계</li>
+                  <li>크롤링 데이터: 네이버 블로그 데이터, 네이버 검색 데이터</li>
+                  <li>영상 데이터: 슈퍼맨이 돌아왔다 삼둥이편 데이터</li>
+                </ol>
+                <p>그리고 이 데이터를 기반으로</p>
+                <ol>
+                  <li>미디어가 송도에 어떤 영향을 미쳤는지,</li>
+                  <li>그 영향으로 송도는 어떻게 변했는지</li>
+                </ol>
+                <p>알아보기 위해서 총 3단계의 회귀 분석을 진행했습니다.</p>
               </div>
             </div>
           </div>
@@ -78,49 +92,104 @@
       </div>
     </section>
 
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">프렌차이즈 개수</h4>
-        <div class="linechart" id="franchise"></div>
+    <section class="page-section container ">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 intro_links rounded">
+          <h3>1단계 회귀 분석</h3>
+          <p>'슈퍼맨이 돌아왔다'로 인해 송도에 대한 관심 증가</p>
+          <ul>
+            <li>삼둥이편 회차가 진행될수록</li>
+            <li>삼둥이 편에서 송도가 노출될 수록</li>
+            <li>'슈돌' 내에서 삼둥이 편 비중이 증가할수록</li>
+            <li><em>송도 관련 게시물 수가 증가했다.</em></li>
+          </ul>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>송도에 관한 네이버 블로그 게시물 수</p>
+              <div class="linechart blogpost"></div>
+            </div>
+          </span>
+        </div>
       </div>
     </section>
 
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">블로그 포스팅 개수</h4>
-        <div class="linechart" id="blogpost"></div>
+    <section class="page-section container ">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 intro_links rounded">
+          <h3>2단계 회귀 분석</h3>
+          <p>송도의 번화 확인</p>
+          <ul>
+            <li>송도에 관한 네이버 블로그 게시물 수가 증가할 수록</li>
+            <li>삼둥이 기사량이 증가할 수록</li>
+            <li>송도의 유동인구가 증가할 수록</li>
+            <li><em>송도의 사업체 개수가 증가했다.</em></li>
+          </ul>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>송도에 관한 네이버 블로그 게시물 수</p>
+              <div class="linechart blogpost"></div>
+            </div>
+          </span>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>송도 유동인구수</p>
+              <div class="linechart" id="floatingPop"></div>
+            </div>
+          </span>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>사업체 개수</p>
+              <div class="linechart franchise"></div>
+            </div>
+          </span>
+        </div>
       </div>
     </section>
 
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">유동인구수</h4>
-        <div class="linechart" id="floatingPop"></div>
+    <section class="page-section container ">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 intro_links rounded">
+          <h3>3단계 회귀 분석</h3>
+          <p>송도의 부동산 가치 상승</p>
+          <ul>
+            <li>송도의 사업체 개수가 증가할 수록</li>
+            <li>분양 호수가 증가할 수록</li>
+            <li>송도의 거주 인구가 증가할 수록</li>
+            <li><em>송도의 지가지수가 상승했다.</em></li>
+          </ul>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>사업체 개수</p>
+              <div class="linechart franchise"></div>
+            </div>
+          </span>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>분양 호수</p>
+              <div class="linechart" id="sales"></div>
+            </div>
+          </span>
+          <span class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <p>송도 거주 인구수</p>
+              <div class="linechart" id="population"></div>
+            </div>
+          </span>
+        </div>
       </div>
     </section>
 
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">주거인구수</h4>
-        <div class="linechart" id="population"></div>
-      </div>
-    </section>
-
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">부동산 미분양율</h4>
-        <div class="linechart" id="sales"></div>
-      </div>
-    </section>
-
-    <section class="page-section container">
-      <div class="intro_links rounded">
-        <h4 class="linechar_name">송도 검색량</h4>
-        <div class="linechart" id="search"></div>
-      </div>
-    </section>
-
-
+    <a href="#" id="return-to-top"><i class="icon-chevron-up"></i></a>
 
     <footer class="footer text-faded text-center py-5">
       <div class="container">
@@ -128,10 +197,10 @@
       </div>
     </footer>
 
+
     <!-- Bootstrap core JavaScript -->
     <script src="static/vendor/jquery/jquery.min.js"></script>
     <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- d3 & linecharts -->
     <script src="https://d3js.org/d3.v3.min.js"></script>
 
@@ -141,6 +210,8 @@
     <script src="static/js/sp_population.js"></script>
     <script src="static/js/sp_sale.js"></script>
     <script src="static/js/sp_search.js"></script>
+
+    <script src="static/js/returntotop.js"></script>
 
   </body>
 
