@@ -1,5 +1,5 @@
 // Metric
-$('.franchise').each(function(sparklineId) {
+$('#franchise').each(function(sparklineId) {
 
 
   	var th = $(this),
