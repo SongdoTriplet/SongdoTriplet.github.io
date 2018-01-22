@@ -74,9 +74,10 @@ p {
   text-align: left;
 }
 
-.intro_links h1,h2,h3,h4,h5,h6 {
-  text-align: center !important;
+.padding {
+  height: 35px;
 }
+
 
 #mainNav {
   background-color: #667578;
