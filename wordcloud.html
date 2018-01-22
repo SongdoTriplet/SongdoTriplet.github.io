@@ -64,18 +64,30 @@
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">단어의 빈도수로 트렌드 시각화</span>
-                  <span class="section-heading-lower">워드클라우드</span>
+                  <span class="section-heading-lower">Word cloud를 통해 보는 송도의 변화</span>
                 </h2>
-                <p>네이버 블로그 포스트에서 가장 많이 사용 된 단어의 빈도를 시각적으로 표현했다. 빈도수를 기준으로 크기가 정해지기 때문에 자주 언급된 키워드를 확인 가능하다. </p>
-                <p>삼둥이편 방영 전, 후를 비교했을 때, 방영 전에는 <strong>‘신도시/아파트/위치’</strong> 등 투자대상으로서의 키워드를 볼 수 있고, 부동산 관련 단어가 눈에 띈다. 하지만 방영 후에는 <strong>‘맛집/아울렛’</strong> 등 여가 관련 단어가 추가되었다</p>
-                <p>그러므로 <strong>‘아파트 / 분양,빌라/ 월세’</strong>의 크기가 증가 한 것은 실 거주 목적으로써의 검색 키워드나 늘어난 것이고, 이는 송도에 대한 실질적인 주거 수요가 증대된 것이라 해석할 수 있다. 또한 새로이 등장한 키워드(<strong>‘맛집 /아울렛 등’</strong>)를 통해 전과 비교해 사람들에게 송도가 여가 공간으로 인식 됨을 확인했다.</p>
-                <div class="wordcloud_collection">
-                  <div class="wordclouds" id="cloud1"></div>
-                  <h5>슈퍼맨이 돌아왔다 삼둥이 방영 전</h5>
-                  <div class="wordclouds" id="cloud3"></div>
-                  <h5>슈퍼맨이 돌아왔다 삼둥이 방영 후</h5>
-                </div>
+                <p>단어의 빈도수를 기준으로 자주 언급 된 키워드를 크기를 통해 확인할 수 있습니다. </p>
+                <p>삼둥이편 방영 전, 후를 비교하여 변화된 키워드를 비교해보았습니다.</p>
+                <ul>
+                  <li>
+                    삼둥이 방영 전
+                    <ul>
+                      <li><strong>신도시/아파트/위치</strong></li>
+                    </ul>
+                  </li>
+                  <li>
+                    삼둥이 방영 후
+                    <ul>
+                      <li>
+                        <strong>맛집/아울렛</strong>
+                      </li>
+                      <li>
+                        <strong>아파트/분양,빌라/월세</strong>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>삼둥이 방영 전에는 신도시, 아파트 등 부동산 투자 관련 단어가 눈에 띄었습니다. 삼둥이 방영 후에는 맛집, 아울렛 등 여가 관련 단어가 추가 됨으로서 이전과 비교해 사람들이 송도를 좀 더 여가 공간으로 인식하는 것을 확인 할 수 있었습니다. 또한 아파트, 월세의 크기가 증가 한 것을 통해 송도에 대한 실질적인 거주 수요가 증대 된 것이라고 해석될 수 있습니다.</p>
               </div>
             </div>
           </div>
@@ -86,13 +98,38 @@
     <section class="page-section">
       <div class="container">
         <div class="intro_links rounded">
+          <div class="wordcloud_collection row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <div class="wordclouds" id="cloud1div">
+                <div id="cloud1"></div>
+                <h5>슈퍼맨이 돌아왔다 삼둥이 방영 전</h5>
+              </div>
+              <div class="wordclouds" id="cloud3div">
+                <div id="cloud3"></div>
+                <h5>슈퍼맨이 돌아왔다 삼둥이 방영 후</h5></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="intro_links rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">범프차트 관해서</span>
-            <span class="section-heading-lower">범프차트</span>
+            <span class="section-heading-lower">Bump Chart를 통해 보는 송도의 변화</span>
           </h2>
-          <p>범프차트는 서로 다른 두 점을 직선으로 연결함으로써 ‘값이 어떻게 변했는가’를 표현 할 수 있다. 기간 별 변화를 한 차트 안에서 종합적으로 확인할 수 있다</p>
-          <p>범프차트를 통해 가장 상위에 신도시와 아파트가 보이고, 분양이나 오피스텔의 경우는 방영 기간을 기점으로 보다 드라마틱하게 상승 한 것을 볼 수있다. 맛집이나 호텔 (놀거리 관련 키워드) 역시 꾸준히 상승 한다.</p>
-          <p>'삼둥이’를 제외한 그래프가 상승하는 것으로 보아, 시간이 지남에 따라 사람들에게 송도가 점점 더 대중의 관심을 받고 있다는 것을 확인했다.</p>
+          <p>범프차트는 서로 다른 두 점을 직선으로 연결함으로써 ‘값이 어떻게 변했는가’를 표현 할 수 있습니다. 기간 별 변화를 한 차트 안에서 종합적으로 확인할 수 있습니다.</p>
+          <p>범프차트를 통해 가장 상위에 신도시와 아파트가 보이고, 분양이나 오피스텔의 경우는 방영 기간을 기점으로 보다 드라마틱하게 상승 한 것을 볼 수있습니다. 맛집이나 호텔 (놀거리 관련 키워드) 역시 꾸준히 상승 하는 것을 볼 수 있습니다.</p>
+          <p>'삼둥이’를 제외한 그래프가 상승하는 것으로 보아, 시간이 지남에 따라 사람들에게 송도가 점점 더 대중의 관심을 받고 있다는 것을 확인하였습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="intro_links rounded">
           <div id="bumpchart"></div>
         </div>
       </div>

@@ -16,7 +16,7 @@
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/leaflet.css"/>
   	<link rel="stylesheet" href="static/css/map.css"/>
-  	<link rel="stylesheet" href="static/css/overall.css"/>
+  	<link rel="stylesheet" href="static/css/overall_map.css"/>
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -66,11 +66,21 @@
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">송도를 설명하는 지도</span>
-                  <span class="section-heading-lower">지도에 관해서</span>
+                  <span class="section-heading-lower">Map으로 보는 송도의 변화</span>
                 </h2>
-                <p>삼둥이편 방영을 기점으로 기간을 전, 중, 후로 나누어 각 카테고리 별 사업체 수의 변화를 분석하고 D3 툴을 사용해 시각화 했다.</p>
-                <p>각 카테고리는 해당 사업이 실제 주거인구가 많아질 수록, 유동인구가 많아질 수록 증가하므로 선정하였다.</p>
+                <p>Map을 통해 사업체의 위치와 분포를 가시적으로 확인 할 수 있습니다.</p>
+                <p>삼둥이편 방영을 기점으로 기간을 전, 중, 후로 나누어 각 카테고리 별 사업체 수의 변화를 분석 했습니다.</p>
+                <ul>
+                  <li>주거: 병원, 학교, 피트니스 센터</li>
+                  <ul>
+                    <li>해당 사업은 실제 주거인구가 많아질 수록 증가하므로 선정</li>
+                  </ul>
+                  <li>핫플레이스: 편의점, 제과점, 영화관, 노래방, 카페, 패스트푸드</li>
+                  <ul>
+                    <li>해당 사업은 유동인구가 많아질 수록 증가하므로 선정</li>
+                  </ul>
+                </ul>
+
                 <p>분석 결과 시간이 지날 수록 모든 카테고리의 사업체 수가 증가하는 것을 통해 송도가 주거와 여가에 모두에 적합한 공간으로 번화 한 것을 확인할 수 있다.</p>
             </div>
           </div>
@@ -103,6 +113,7 @@
               <option value="0" label="전"></option>
               <option value="1" label="중"></option>
               <option value="2" label="후"></option>
+              <p>전, 중, 후</p>
           </datalist>
         </input>
 
